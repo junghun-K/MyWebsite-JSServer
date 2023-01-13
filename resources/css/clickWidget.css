@@ -1,0 +1,29 @@
+#clickContainer {
+  width: 34em;
+  background: #ffffff;
+  padding: 1.25em;
+  margin: 5.5em auto;
+  border-radius: 0.4em;
+  height: 9em;
+  border: 2px solid gray;
+}
+#clickContainer #clickHeader {
+  text-align: center;
+  background-color: #FEFFED;
+  border-radius: 0.25em;
+  margin: -39px -20px 10px -20px;
+}
+
+#clickContainer h2{
+  padding-top: 10px;
+}
+
+#clickContainer #clickContent {
+  margin-top: 10%;
+  text-align: center;
+}
+#click {
+  text-align: center;
+  padding: 7px 30px;
+  font-size: 15px;
+}

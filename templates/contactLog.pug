@@ -1,0 +1,61 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    title Ken's page: Contact Logs
+    link(rel="stylesheet", href="css/myStyle.css")
+  body
+    include theNav.pug
+
+    h1#contact_head Messages
+    div#contact_field_container
+      form(action="/contactLog", method="GET")
+        fieldset#contact_field
+          if optradio === 'all'
+            input#all(type="radio", name="optradio", value="all" , checked=true)
+          else
+            input#all(type="radio", name="optradio", value="all" , checked=false)
+          label(for="all") All
+
+          if optradio === 'question'
+            input#question(type="radio", name="optradio", value="question",checked=true)
+          else
+            input#question(type="radio", name="optradio", value="question",checked=false)
+          label(for="question") Question
+
+          if optradio === 'comment'
+            input#comment(type="radio", name="optradio", value="comment", checked=true)
+          else
+            input#comment(type="radio", name="optradio", value="comment", checked=false)
+          label(for="comment") Comment
+          
+          if optradio === 'concern'
+            input#concern(type="radio", name="optradio", value="concern", checked=true)
+          else
+            input#concern(type="radio", name="optradio", value="concern", checked=false)
+          label(for="concern") Concern 
+          button Filter
+
+  if contacts.length != 0
+    div#contactsTable
+      table#contact_table
+        tr
+          th from
+          th title
+          th category
+          th message
+        
+        each contact in contacts
+          tr
+            td
+              if contact.link == "" 
+                = contact.username
+              else
+                a(href=contact.link, target="_blank")= contact.username
+              br
+              a(href="mailto:"+contact.email)= contact.email
+            td= contact.title 
+            td= contact.category 
+            td= contact.message
+  else
+    p#errorMessage There is no data found      

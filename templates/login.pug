@@ -1,0 +1,30 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    title= "Ken's page: About Me"
+    link(rel="stylesheet", href="css/myStyle.css")
+
+  body
+    // Navbar
+    include theNav.pug
+// reffered if/else statement from: https://riptutorial.com/pug/example/29821/if-else-statement-in-pug
+if logged_in === true
+    h1#login_header Welcome! #{username}, Click the logout button to logout
+
+    div(id="formContainer")
+      form(action="/logout" method="POST" id="form")
+        div(id="buttonContainer")
+          button(type="submit" id="logout_btn") Logout
+else
+    h1#login_header Log in?
+
+    div(id="formContainer")
+      form(action="/login" method="POST" id="form")
+        label(for="uesrname") user name:
+        input#username(placeholder="username" name="username")
+        br
+        label(for="password") password:
+        input#password(placeholder="password" name="password")
+        br 
+        button(type="submit") Submit

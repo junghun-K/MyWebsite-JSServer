@@ -1,0 +1,81 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    link(rel="stylesheet", href="css/myStyle.css")
+    link(rel="stylesheet", href="css/passwordWidget.css")
+    link(rel="stylesheet", href="css/weatherWidget.css")
+    link(rel="stylesheet", href="css/clickWidget.css")
+
+    script(async, defer, src="js/weatherWidget.js")
+    script(async, defer, src="js/passwordWidget.js")
+    script(async, defer, src="js/timeWidget.js")
+    script(async, defer, src="js/clickWidget.js")
+
+    title Ken's page: Widgets
+
+  body
+    // Navbar
+    include theNav.pug
+
+    h1#widgetTitle My Widgets
+    .row
+      // Youtube Copied from: https://www.youtube.com/watch?v=y8u76Hc_6_M
+      iframe#youtube(width="560", height="315", src="https://www.youtube.com/embed/y8u76Hc_6_M", allowfullscreen)
+      // Twitter Copied from: https://publish.twitter.com/?query=https%3A%2F%2Ftwitter.com%2FUMNews%2Fstatus%2F1567890576556654592&widget=Tweet
+      blockquote.twitter-tweet
+        p(lang="en", dir="ltr") We&amp;#39;re dancing with excitement! Fall semester is here! 
+          a(href="https://twitter.com/hashtag/UMNproud?src=hash&amp;ref_src=twsrc%5Etfw") #UMNproud
+          a(href="https://t.co/WyMxfNb19z") pic.twitter.com/WyMxfNb19z
+        | &amp;mdash; University of Minnesota (@UMNews)
+        a(href="https://twitter.com/UMNews/status/1567890576556654592?ref_src=twsrc%5Etfw") September 8, 2022
+      script(async, src="https://platform.twitter.com/widgets.js")
+    .row
+      // password
+      #passwordContainer
+        #header
+          h2 Password Strength Checking with JS
+          hr
+        #content
+          form#register(name="register")
+            label(for="password") Password :
+            input#password(name="password", type="password", placeholder="Type Your Password here")
+            
+            span#pwdresult
+      // time left widget
+      #timeContainer
+        #timeHeader
+          h2 Time Until the end of the semester
+          hr
+        #timeContent
+          span#timeResult
+    // weather widget
+    #weatherContainer
+      #weatherHeader
+        h2 weather
+        hr
+      #weatherContent
+        p#weatherStatus
+        div
+          span Coordinates:
+          input#latitude-input(type="text", placeholder="Latitude")
+          input#longitude-input(type="text", placeholder="Longitude")
+        div
+          button#find-me(type="button") Auto-Find me!
+          button#get-weather-btn(type="button") Find The Weather!
+        #weatherOutput
+          p#temp-display
+          p#cloud-cover-display
+          p#sunrise-display
+          p#sunset-display
+        // Interesting fact. We're legally required to put this here.
+        a(href="https://open-meteo.com/") Weather data by Open-Meteo.com
+        a(href="https://sunrise-sunset.org/") Sunrise and sunset data by sunrise-sunset.org
+    
+    #clickContainer
+        #clickHeader
+          h2 Click Toy
+          hr
+        #clickContent
+          //- button#click 0
+          button#click(onclick='clickUpdate()') 0

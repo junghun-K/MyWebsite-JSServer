@@ -1,0 +1,52 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Audiowide")
+    link(rel="stylesheet", href="css/myStyle.css")
+    title Ken's page: About Me
+
+  body
+    // Navbar
+    include theNav.pug
+
+    h1#name Jeonghoon Kim
+    // Picture of Ken
+    img(src= "images/ken.jpg", alt="No Ken's picture", id="main_picture")
+
+    // About Me
+    div(id="col_container")
+      div.columns
+        h2 About Me
+        p
+          | I am Jeonghoon Kim, preferably 
+          strong Ken 
+          | from South Korea.
+          | I am a senior majoring in computer science at the U of M and expected to graduate in Spring 2023 (next semester).
+        p
+          | I have been learning computer science since 2016 and started with Java but my major language is python.
+          | I am learning programming because I can do so many things with it.
+          | One of my interests is machine learning and deep learning I can analyze the data to predict something.
+          | Before I join the army in 2018, I started web programming myself. I have learned HTML, CSS, and scratched JS
+          | I have experienced a little bit of front-end and back-end.
+          | I built an online shopping website, and API to learn what the backend is.
+        p
+          | If I have to build something, I would like to build a website that represents me, so this assignment is fairly what I wanted to do.
+          | I enjoy playing soccer and swimming for staying healthy since many university students have bad eating habits and do not exercise due to school loads.
+          | My favorite activity over the summer is surfing, which I did during the summer vacation in my home country.
+        p
+          | I love learning ML and DL and want to become a 
+          em data scientist 
+          | , but I am also considering 
+          em web-developer 
+          | and 
+          em app developer 
+          | due to high demands in the job market.
+          | Therefore, this course might help me find what I really want to do after graduation, which makes me so excited!!!
+      div.columns
+        h2 Hobbies
+        ul
+          li Soccer
+          li Swimming
+          li Playing games
+          li Self-development

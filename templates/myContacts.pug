@@ -1,0 +1,93 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    link(rel="stylesheet", href="css/myStyle.css")
+    script(src="js/myContacts.js")
+    title Ken's page: Contacts Information
+  body
+    // Navbar
+    include theNav.pug
+
+    h1(id="contact_head") Contacts
+    // Contact Table
+    div(id="table_container")
+      table(id="contact_table")
+        // Header row
+        tr
+          th(onclick="sortBy(0)") Name
+          th(onclick="sortBy(1)") Location
+          th(onclick="sortBy(2)") Contact Information
+          th(onclick="sortBy(3)") email
+          th(onclick="sortBy(4)") website
+        // 5 Information row
+        // referenced from: https://www.codegrepper.com/code-examples/javascript/how+to+change+image+source+using+javascript
+        //
+      
+        tr(onmouseenter="changeImage('images/me.jpg')", onmouseleave="changeImage('images/gophers-mascot.png')")
+          td Ken
+          td
+            img#ken(src="images/me.jpg", alt="No picture available")
+            | #210 Dinnaken House
+            br
+            | 900 Washington Ave SE
+            br
+            | Minneapolis, MN 55414
+          td Me, Jeonghoon Kim from South Korea
+          td
+            a(href="mailto:kimx5154@umn.edu") kimx5154@umn.edu
+          td
+            a(href="https://www.linkedin.com/in/junghun-kim-42362a24b/", target="_blank") Ken&apos;s LinkedIn
+        tr(onmouseenter="changeImage('images/google.jpg')", onmouseleave="changeImage('images/gophers-mascot.png')")
+          td Google
+          td
+            img#google(src="images/google.jpg", alt="No picture available")
+            | Headquarters
+            br
+            | 1600 Amphitheatre Parkway
+            br
+            | Mountain View, CA 94043
+          td Google, the best search engine
+          td
+            a(href="mailto:support-in@google.com") support-in@google.com
+          td
+            a(href="https://www.google.com/", target="_blank") Google
+        tr(onmouseenter="changeImage('images/amazon.png')", onmouseleave="changeImage('images/gophers-mascot.png')")
+          td Amazon
+          td
+            img#amazon(src="images/amazon.png", alt="No picture available")
+            | 410 Terry Ave N,
+            br
+            | Seattle, WA 98109
+          td Amazon, where I search or buy the product I need
+          td
+            a(href="mailto:cs-reply@amazon.com") cs-reply@amazon.com
+          td
+            a(href="https://www.amazon.com/", target="_blank") Amazon
+        tr(onmouseenter="changeImage('images/meta.jpg')", onmouseleave="changeImage('images/gophers-mascot.png')")
+          td Meta
+          td
+            img#meta(src="images/meta.jpg", alt="No picture available")
+            | One Hacker Way
+            br
+            | Menlo Park, CA 94025
+          td Known as Facebook
+          td
+            a(href="mailto:support@fb.com") support@fb.com
+          td
+            a(href="https://about.facebook.com/", target="_blank") Meta
+        tr(onmouseenter="changeImage('images/coffman.jpg')", onmouseleave="changeImage('images/gophers-mascot.png')")
+          td UMN IT
+          td
+            img#coffman(src="images/coffman.jpg", alt="No picture available")
+            | 300 Washington Ave S.E.
+            br
+            | Minneapolis, MN 55455
+          td UMN Information Technology
+          td
+            a(href="mailto:help@umn.edu") help@umn.edu
+          td
+            a(href="https://it.umn.edu/how-get-technology-help", target="_blank") UMN Information Technology
+      // referenced from: https://www.tutorialrepublic.com/faq/how-to-change-image-on-hover-with-css.php
+      div(id="example_img")
+        img(src="images/gophers-mascot.png", alt="No picture available", id="img_top")

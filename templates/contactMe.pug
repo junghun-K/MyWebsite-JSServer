@@ -1,0 +1,61 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    link(rel="stylesheet", href="css/myStyle.css")
+    script(async, defer, src="js/contactMe.js")
+    title Ken's page: Leave a Message
+  body
+    // Navbar
+    include theNav.pug
+    
+    // conditional logic
+    if message_bool === true
+      div#confirmMessage #{message_status}
+    else 
+      div#MessageNotShown
+
+    div#formContainer
+      form#form(action="/contactMe", method="POST")
+        h1 Contact Me
+        p Required fields are marked with *
+        label(for="title") Title:*
+        br
+        input#title(type="text", name="postTitle", required)
+        br
+        // Referenced from: https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_input_type_email
+        label(for="email") Email:*
+        br
+        input#email(type="email", name="email", title="It should include @ sign", required)
+        br
+        label(for="user") Username:*
+        br
+        input#user(type="text", name="username", required)
+        br
+        // Referemced from: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/url
+        label(for="link") Link:
+        br
+        input#link(type="url", name="link")
+        br
+        // Referenced from: https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_fieldset
+        fieldset#field
+          legend Category of message:*
+          input#question(type="radio", name="category", value="question", required)
+          label(for="question") Question
+          br
+          input#comment(type="radio", name="category", value="comment")
+          label(for="comment") Comment
+          br
+          input#concern(type="radio", name="category", value="concern")
+          label(for="concern") Concern
+        p#concernbox
+          | In order to best address your concern, 
+          | please make sure to list the specific way 
+          | in which I have wronged you.
+        br
+        // Referenced from: https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_textarea
+        label(for="message") Message:*
+        br
+        textarea#message(name="message", rows="4", required)
+        br
+        button Submit
