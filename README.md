@@ -11,8 +11,8 @@ If port 3006 is taken, change the port number.
 * You may access all tabs except for contact log which requires access UMN database in UMN CSELabs Machine.  
 So if you cannot access.
 
-> ssh -L 127.0.0.1:3306:cse-mysql-classes-01.cse.umn.edu:3306 kimx5154@csel-kh1250-37.cselabs.umn.edu
-if connection succeeded.
+> ssh -L 127.0.0.1:3306:cse-mysql-classes-01.cse.umn.edu:3306 kimx5154@csel-kh1250-37.cselabs.umn.edu  
+if connection succeeded.  
 > mysql -uC4131F22U53 -hcse-mysql-classes-01.cse.umn.edu -P3306 C4131F22U53 -p
 > admin (password)
 
